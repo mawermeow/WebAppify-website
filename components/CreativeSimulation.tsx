@@ -7,7 +7,7 @@ import { Whiteboard } from "./Whiteboard";
 
 const views = [
   { id: "landscape", device: "iPhone 17 Pro Max", orientation: "Landscape" },
-  { id: "duo", device: "iPhone Duo", orientation: "Wide view" },
+  { id: "duo", device: "iPhone Duo", orientation: "Inner display" },
 ] as const;
 
 const experiences = {
@@ -21,7 +21,7 @@ const experiences = {
 
 export function CreativeSimulation({ locale, method }: { locale: Locale; method: keyof typeof experiences }) {
   const t = translator(locale);
-  const [view, setView] = useState<(typeof views)[number]["id"]>("landscape");
+  const [view, setView] = useState<(typeof views)[number]["id"]>("duo");
   const { editing, tools, chrome, note } = experiences[method];
 
   return <div className="creative-simulation">

@@ -7,14 +7,14 @@ import { translator } from "@/lib/messages";
 import type { Chapter } from "@/lib/chapters";
 import { demos } from "@/lib/site";
 import { CreativeSimulation } from "./CreativeSimulation";
-import { ReaderSimulation, type ReadingMethod } from "./ReaderSimulation";
+import { ReaderSimulation, readingExperiences, type ReadingMethod } from "./ReaderSimulation";
 
 const webMethods = ["Safari", "PWA", "WebAppify"] as const;
 const readingMethods = ["Official app", ...webMethods] as const;
 
 export function Comparison({ locale, chapters }: { locale: Locale; chapters: readonly Chapter[] }) {
   const t = translator(locale);
-  const [demoIndex, setDemo] = useState(0);
+  const [demoIndex, setDemo] = useState(1);
   const [method, setMethod] = useState<ReadingMethod>("WebAppify");
   const demo = demos[demoIndex];
   const isCreative = demo.id === "whiteboard";
@@ -32,13 +32,21 @@ export function Comparison({ locale, chapters }: { locale: Locale; chapters: rea
       <fieldset><legend>{t("Choose a workspace")}</legend><div className="segments">
         {demos.map((item, index) => <label key={item.id}><input type="radio" name="workspace" checked={demoIndex === index} onChange={() => changeWorkspace(index)} /><span>{t(item.title)}</span></label>)}
       </div></fieldset>
-      <fieldset><legend>{t("Opening method")}</legend><div className="segments">
+    </div>
+    <fieldset className="method-fieldset"><legend>{t("Opening method")}</legend>
+      <div className={isCreative ? "segments" : "reader-methods"}>
         {(isCreative ? webMethods : readingMethods).map(item => <label key={item}>
           <input type="radio" name="method" checked={method === item} onChange={() => setMethod(item)} />
-          <span>{item === "Official app" ? t(item) : item}</span>
+          <span>
+            {!isCreative && <span className="reader-diagram" data-layout={readingExperiences[item].layout} aria-hidden="true">
+              <span className="reader-diagram-page" />
+            </span>}
+            {isCreative ? item : <strong>{item === "Official app" ? t(item) : item}</strong>}
+            {!isCreative && <small>{t(readingExperiences[item].badge)}</small>}
+          </span>
         </label>)}
-      </div></fieldset>
-    </div>
+      </div>
+    </fieldset>
     {isCreative
       ? <CreativeSimulation locale={locale} method={method === "Official app" ? "WebAppify" : method} />
       : <ReaderSimulation locale={locale} method={method} chapters={chapters} />}

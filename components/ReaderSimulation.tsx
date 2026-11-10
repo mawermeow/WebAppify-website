@@ -6,7 +6,7 @@ import { translator } from "@/lib/messages";
 import type { Chapter } from "@/lib/chapters";
 import { Reader } from "./Reader";
 
-const experiences = {
+export const readingExperiences = {
   "Official app": { layout: "official", badge: "Narrow app window",
     note: "In this iPhone Duo capture, the official HyRead app opens in a narrow window, leaving unused space on the sides." },
   Safari: { layout: "browser", badge: "Address bar and tabs",
@@ -17,7 +17,7 @@ const experiences = {
     note: "In the WebAppify capture, the book uses nearly the full view without the browser bars shown in the other web sessions." },
 } as const;
 
-export type ReadingMethod = keyof typeof experiences;
+export type ReadingMethod = keyof typeof readingExperiences;
 
 function Cover({ locale }: { locale: Locale }) {
   const t = translator(locale);
@@ -40,8 +40,8 @@ function Cover({ locale }: { locale: Locale }) {
 
 export function ReaderSimulation({ locale, method, chapters }: { locale: Locale; method: ReadingMethod; chapters: readonly Chapter[] }) {
   const t = translator(locale);
-  const [reading, setReading] = useState(false);
-  const { layout, badge, note } = experiences[method];
+  const [reading, setReading] = useState(true);
+  const { layout, note } = readingExperiences[method];
 
   return <div className="reader-simulation">
     <figure className="simulation-stage">
@@ -57,13 +57,12 @@ export function ReaderSimulation({ locale, method, chapters }: { locale: Locale;
         <div className="reader-preview-page" data-reading={reading}>
           {reading ? <Reader locale={locale} chapters={chapters} /> : <Cover locale={locale} />}
         </div>
-        {layout === "pwa" && <div className="reader-preview-overlay" aria-hidden="true">
+        {layout === "pwa" && reading && <div className="reader-preview-overlay" aria-hidden="true">
           <div><span>×</span><span>{t("Field Notes")}</span><span>⋯</span></div>
           <div><span>‹</span><span>↗ &nbsp; ↻</span></div>
         </div>}
       </div>
       <figcaption className="comparison-caption">
-        <div className="comparison-badges"><span>{t(badge)}</span></div>
         <p className="reading-comparison-note" aria-live="polite">{t(note)}</p>
         <p>{t("Illustration based on one HyRead session on iPhone Duo.")}</p>
       </figcaption>

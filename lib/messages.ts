@@ -1,6 +1,15 @@
 import type { Locale } from "./locales";
 
 const messages = {
+  "Compare on iPhone Duo": ["比較 iPhone Duo 使用體驗", "iPhone Duoで比較", "iPhone Duo에서 비교하기"],
+  "01 / IPHONE DUO": ["01 / IPHONE DUO", "01 / IPHONE DUO", "01 / IPHONE DUO"],
+  "What fits when you unfold iPhone Duo?": ["展開 iPhone Duo，能多看到什麼？", "iPhone Duoを開くと、どこまで見える？", "iPhone Duo를 펼치면 무엇이 더 보일까요?"],
+  "Compare four ways to open a book, or switch to the whiteboard to see which editing tools fit alongside the canvas.": ["比較同一本書的四種開啟方式，或切到白板，看看畫布旁能放下哪些編輯工具。", "同じ本を4つの方法で開いて比べたり、ホワイトボードに切り替えてキャンバスの横に並ぶ編集ツールを確認したりできます。", "같은 책을 여는 네 가지 방법을 비교하거나, 화이트보드로 전환해 캔버스 옆에 어떤 편집 도구가 표시되는지 확인하세요."],
+  "Inner display": ["內螢幕", "内側のディスプレイ", "내부 화면"],
+  "Unfold and keep going": ["展開後，接著用", "開いて、そのまま続ける", "펼쳐서 이어서 사용하기"],
+  "When you open or close your iPhone Duo, the viewer resizes in the same browsing session. The website decides how its layout responds.": ["展開或闔上 iPhone Duo 時，WebAppify 會在同一次瀏覽中調整檢視器大小。網頁如何重新排版取決於網站本身。", "iPhone Duoを開閉すると、閲覧セッションを保ったままビューアのサイズが変わります。レイアウトの切り替わり方はサイトによって異なります。", "iPhone Duo를 펼치거나 접으면 같은 브라우징 세션에서 뷰어 크기가 바뀝니다. 레이아웃이 어떻게 바뀌는지는 사이트에 따라 다릅니다."],
+  "Save a layout for each site": ["替每個網站記住顯示模式", "サイトごとに表示設定を保存", "사이트별로 표시 모드 저장하기"],
+  "Try Auto for reading and save a Desktop profile for your whiteboard. WebAppify reuses each site’s display setting when you open it again.": ["閱讀網站可以先試自動模式，白板則可儲存為桌面版。下次開啟時，WebAppify 會沿用各網站的顯示設定。", "読書サイトは自動表示を試し、ホワイトボードはデスクトップ表示で保存できます。次回もサイトごとの表示設定が使われます。", "읽기 사이트는 자동 모드로 열어 보고, 화이트보드는 데스크톱 프로필로 저장하세요. 다음에 열 때도 사이트별 표시 설정이 적용됩니다."],
   "Skip to content": ["跳至主要內容", "本文へスキップ", "본문 바로가기"],
   "Language": ["語言", "言語", "언어"],
   "Main": ["主要導覽", "メインナビゲーション", "주 메뉴"],

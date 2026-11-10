@@ -53,15 +53,19 @@ export default function Home({ locale }: { locale: Locale }) {
         <h1>{t("Make Any Website")}<br className="wide-break" />{locale === "ja" ? "" : " "}{t("into Your")}{locale === "ja" ? "" : " "}<em>{t("App.")}</em></h1>
         <p className="hero-subtitle">{t("Your favorite websites. Your preferred experience.")}</p>
         <p className="lede">{t("WebAppify lets you turn websites into personal web apps, choose desktop or mobile experiences, and browse without traditional browser distractions.")}</p>
-        <div className="actions"><Download locale={locale} hero /><Link className="button secondary" href="#experience">{t("Explore the Demo")} <span aria-hidden="true">↓</span></Link></div>
+        <div className="actions"><Download locale={locale} hero /><Link className="button secondary" href="#experience">{t("Compare on iPhone Duo")} <span aria-hidden="true">↓</span></Link></div>
       </div>
       <ProductPreview locale={locale} />
     </section>
     <section id="experience" className="section lab"><div className="shell">
-      <p className="eyebrow section-index">{t("01 / THE EXPERIENCE")}</p>
-      <h2>{t("Same Website.")}<br />{t("Different Experience.")}</h2>
-      <p className="lede">{t("Discover how the way you open a website can change the way you use it.")}</p>
+      <p className="eyebrow section-index">{t("01 / IPHONE DUO")}</p>
+      <h2>{t("What fits when you unfold iPhone Duo?")}</h2>
+      <p className="lede">{t("Compare four ways to open a book, or switch to the whiteboard to see which editing tools fit alongside the canvas.")}</p>
       <Comparison locale={locale} chapters={localizedChapters[locale]} />
+      <div className="duo-details">
+        <article><h3>{t("Unfold and keep going")}</h3><p>{t("When you open or close your iPhone Duo, the viewer resizes in the same browsing session. The website decides how its layout responds.")}</p></article>
+        <article><h3>{t("Save a layout for each site")}</h3><p>{t("Try Auto for reading and save a Desktop profile for your whiteboard. WebAppify reuses each site’s display setting when you open it again.")}</p></article>
+      </div>
     </div></section>
     <section id="features" className="shell section">
       <p className="eyebrow section-index">{t("02 / MADE PERSONAL")}</p><h2>{t("Make the web fit you.")}</h2>

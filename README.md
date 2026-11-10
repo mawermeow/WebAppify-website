@@ -27,6 +27,8 @@ python3 -m http.server 3000 --directory out
 
 Publish the entire `out/` directory at the root of the chosen subdomain. Configure the static host to serve directory indexes and use `404.html` for missing pages. Use HTTPS and verify direct requests to each demo route, `robots.txt`, and `sitemap.xml`. The host only serves static files and needs no Node.js runtime.
 
+Pushing `main` to GitHub runs `.github/workflows/pages.yml` and deploys that export to GitHub Pages. This repository is a project site, so the public URL is `https://<owner>.github.io/<repository>/`. The workflow sets `PAGES_BASE_PATH` to `/<repository>` and `NEXT_PUBLIC_SITE_URL` to that URL. Local `npm run build` leaves `PAGES_BASE_PATH` unset and still exports for the domain root. In the repository settings, set Pages to deploy from GitHub Actions. Optional repository variable `NEXT_PUBLIC_APP_STORE_URL` fills the download link at build time. For a custom domain served at the domain root, point `NEXT_PUBLIC_SITE_URL` at that origin and remove `PAGES_BASE_PATH`.
+
 ## Structure
 
 ```text

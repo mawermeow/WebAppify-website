@@ -1,6 +1,12 @@
 import type { Locale } from "./locales";
 
 const messages = {
+  "Browse the web full screen. Make every pixel count.": ["全螢幕瀏覽網頁，不浪費螢幕空間", "ウェブを全画面で。画面をすみずみまで活用。", "웹을 전체 화면으로, 화면 공간을 알차게."],
+  "Unfold iPhone Duo and give the web page the space usually taken up by the address bar and tabs.": ["展開 iPhone Duo，把網址列和分頁原本佔用的空間留給網頁。", "iPhone Duoを開いて、アドレスバーやタブが占めていたスペースをウェブページに。", "iPhone Duo를 펼쳐 주소 막대와 탭이 차지하던 공간까지 웹페이지에 써 보세요."],
+  "Save a mobile or desktop browsing mode for each website.": ["也能為每個網站個別儲存行動版或桌面版設定。", "サイトごとにモバイル表示やデスクトップ表示を保存できます。", "웹사이트마다 모바일 또는 데스크톱 표시 설정을 저장할 수 있습니다."],
+  "WebAppify — Full-screen web browsing on iPhone Duo": ["WebAppify — 在 iPhone Duo 上全螢幕瀏覽網頁", "WebAppify — iPhone Duoでウェブを全画面表示", "WebAppify — iPhone Duo에서 전체 화면 웹 브라우징"],
+  "Browse full screen on iPhone Duo and save mobile or desktop settings for each website with WebAppify.": ["用 WebAppify 在 iPhone Duo 上全螢幕瀏覽網頁，並為每個網站個別儲存行動版或桌面版設定。", "WebAppifyでiPhone Duoの画面を広く使い、サイトごとにモバイル表示やデスクトップ表示を保存できます。", "WebAppify로 iPhone Duo에서 웹을 전체 화면으로 탐색하고 사이트별 모바일 또는 데스크톱 설정을 저장하세요."],
+  "Open a site without an address bar or tabs. In Display settings, extend web content to the screen edges.": ["開啟網站時省去網址列和分頁。也可在「顯示」設定中將網頁內容延伸至螢幕邊緣。", "アドレスバーやタブのない画面でサイトを開けます。「表示」設定では、ウェブコンテンツを画面の端まで広げられます。", "주소 막대와 탭 없이 사이트를 여세요. 표시 설정에서 웹 콘텐츠를 화면 가장자리까지 확장할 수 있습니다."],
   "Compare on iPhone Duo": ["比較 iPhone Duo 使用體驗", "iPhone Duoで比較", "iPhone Duo에서 비교하기"],
   "01 / IPHONE DUO": ["01 / IPHONE DUO", "01 / IPHONE DUO", "01 / IPHONE DUO"],
   "What fits when you unfold iPhone Duo?": ["展開 iPhone Duo，能多看到什麼？", "iPhone Duoを開くと、どこまで見える？", "iPhone Duo를 펼치면 무엇이 더 보일까요?"],

@@ -19,7 +19,7 @@ export const readingExperiences = {
 
 export type ReadingMethod = keyof typeof readingExperiences;
 
-function Cover({ locale }: { locale: Locale }) {
+export function SampleCover({ locale }: { locale: Locale }) {
   const t = translator(locale);
   return <div className="sample-cover">
     <p className="cover-kicker">{t("Field Notes")} / 01</p>
@@ -55,7 +55,7 @@ export function ReaderSimulation({ locale, method, chapters }: { locale: Locale;
           <div className="creative-tab-strip"><span>{t("Field Notes")}</span><span>{t("Fieldwork Board")}</span><span>＋</span></div>
         </div>}
         <div className="reader-preview-page" data-reading={reading}>
-          {reading ? <Reader locale={locale} chapters={chapters} /> : <Cover locale={locale} />}
+          {reading ? <Reader locale={locale} chapters={chapters} /> : <SampleCover locale={locale} />}
         </div>
         {layout === "pwa" && reading && <div className="reader-preview-overlay" aria-hidden="true">
           <div><span>×</span><span>{t("Field Notes")}</span><span>⋯</span></div>

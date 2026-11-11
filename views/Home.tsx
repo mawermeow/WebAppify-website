@@ -3,11 +3,12 @@ import { translator } from "@/lib/messages";
 import { localizedChapters } from "@/lib/chapters";
 import Link from "next/link";
 import { Comparison } from "@/components/Comparison";
+import { SampleCover } from "@/components/ReaderSimulation";
 import { Brand, Download, Footer, Header } from "@/components/SiteChrome";
 
 const features = [
+  { icon: "focus", title: "Websites, without the browser clutter.", body: "Open a site without an address bar or tabs. In Display settings, extend web content to the screen edges." },
   { icon: "screen", title: "Desktop, when you need it.", body: "Request the desktop site when you want more room to work. Choose Auto, Mobile, or Desktop for each website." },
-  { icon: "focus", title: "Websites, without the browser clutter.", body: "Open a saved site in its own focused viewer and decide whether to show the toolbar." },
   { icon: "tiles", title: "Your web apps, your way.", body: "Give each site a name and icon. Keep it in your library with its own display and link preferences." },
 ] as const;
 const steps = [
@@ -25,22 +26,10 @@ function FeatureIcon({ name }: { name: string }) {
 function ProductPreview({ locale }: { locale: Locale }) {
   const t = translator(locale);
   return <figure className="product-preview">
-    <div className="preview-top"><span>{t("THE WEBAPPIFY LIBRARY")}</span><span>{t("ILLUSTRATED PREVIEW")}</span></div>
     <div className="preview-stage" aria-hidden="true">
-      <div className="preview-library"><span className="preview-brand">▣ &nbsp; WEBAPPIFY</span><p>{t("My Web Apps")}</p>
-        <div className="preview-apps">
-          <div><i>◇</i><strong>{t("Fieldwork Board")}</strong><small>{t("Desktop")}</small></div>
-          <div><i>≡</i><strong>{t("Field Notes")}</strong><small>{t("Mobile")}</small></div>
-          <div><i>✳</i><strong>{t("Studio Journal")}</strong><small>{t("Auto")}</small></div>
-        </div>
-      </div>
-      <div className="preview-settings"><div className="setting-icon">◇</div><strong>{t("Fieldwork Board")}</strong><small>{t("Website preferences")}</small>
-        <div className="setting-row">{t("Display mode")} <b>{t("Desktop")}</b></div>
-        <div className="setting-row">{t("Toolbar")} <b>{t("Hidden")}</b></div>
-        <div className="setting-row">{t("External links")} <b>{t("Ask first")}</b></div>
-      </div>
+      <div className="preview-screen"><SampleCover locale={locale} /></div>
     </div>
-    <figcaption><span className="status-dot" /> {t("One library. A different setup for each site.")}</figcaption>
+    <figcaption>iPhone Duo · {t("Inner display")} · {t("ILLUSTRATED PREVIEW")}</figcaption>
   </figure>;
 }
 
@@ -49,10 +38,10 @@ export default function Home({ locale }: { locale: Locale }) {
   const t = translator(locale);
   return <><Header locale={locale} path="/" /><main id="main">
     <section className="shell hero">
-      <div><p className="eyebrow"><span className="status-dot" /> {t("A PERSONAL WEB APP LIBRARY FOR IPHONE")}</p>
-        <h1>{t("Make Any Website")}<br className="wide-break" />{locale === "ja" ? "" : " "}{t("into Your")}{locale === "ja" ? "" : " "}<em>{t("App.")}</em></h1>
-        <p className="hero-subtitle">{t("Your favorite websites. Your preferred experience.")}</p>
-        <p className="lede">{t("WebAppify lets you turn websites into personal web apps, choose desktop or mobile experiences, and browse without traditional browser distractions.")}</p>
+      <div><p className="eyebrow">iPhone Duo</p>
+        <h1>{t("Browse the web full screen. Make every pixel count.")}</h1>
+        <p className="hero-subtitle">{t("Unfold iPhone Duo and give the web page the space usually taken up by the address bar and tabs.")}</p>
+        <p className="lede">{t("Save a mobile or desktop browsing mode for each website.")}</p>
         <div className="actions"><Download locale={locale} hero /><Link className="button secondary" href="#experience">{t("Compare on iPhone Duo")} <span aria-hidden="true">↓</span></Link></div>
       </div>
       <ProductPreview locale={locale} />

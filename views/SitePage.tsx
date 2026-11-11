@@ -14,7 +14,7 @@ import Privacy from "./Privacy";
 import Support from "./Support";
 
 const titles = {
-  home: "WebAppify — Websites, on your terms",
+  home: "WebAppify — Full-screen web browsing on iPhone Duo",
   demos: "Demos",
   whiteboard: "Creative Workspace",
   reader: "Reading Workspace",
@@ -23,7 +23,7 @@ const titles = {
 } satisfies Record<Route, Message>;
 
 const descriptions = {
-  home: description,
+  home: "Browse full screen on iPhone Duo and save mobile or desktop settings for each website with WebAppify.",
   demos: "Open two responsive workspaces in your browser or in WebAppify.",
   whiteboard: "Move and connect ideas on the interactive Fieldwork Board.",
   reader: "Read three original essays and adjust the typography and theme.",
@@ -51,7 +51,7 @@ export function pageMetadata(locale: Locale, slug?: string[]): Metadata {
       alternateLocale: Object.values(openGraphLocales).filter(value => value !== openGraphLocales[locale]),
       ...(metadataBase ? {
         url: path,
-        ...(locale === "en" ? { images: [{ url: "/social.png", width: 1200, height: 630, alt: "WebAppify — Make Any Website into Your App." }] } : {}),
+        ...(locale === "en" && route !== "home" ? { images: [{ url: "/social.png", width: 1200, height: 630, alt: "WebAppify — Make Any Website into Your App." }] } : {}),
       } : {}),
     },
   };

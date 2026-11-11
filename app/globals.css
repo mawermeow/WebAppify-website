@@ -47,7 +47,7 @@ button:disabled { cursor: default; opacity: .55; }
 .nav-links a:hover, .site-footer a:hover, .text-link:hover { text-decoration: underline; text-underline-offset: 4px; }
 
 .hero { display: grid; grid-template-columns: 1.16fr 1fr; align-items: center; gap: clamp(32px, 5vw, 72px); padding-block: clamp(64px, 9vw, 124px); }
-.eyebrow, .preview-top, .preview-brand, .workspace-kicker, .simulation-label { font: 600 .69rem/1.5 var(--mono); letter-spacing: .1em; }
+.eyebrow, .workspace-kicker, .simulation-label { font: 600 .69rem/1.5 var(--mono); letter-spacing: .1em; }
 .eyebrow { color: var(--accent); }
 .status-dot { display: inline-block; width: 7px; height: 7px; background: #4d9e6b; border-radius: 50%; vertical-align: .06em; margin-right: 5px; }
 h1, h2, h3 { text-wrap: balance; }
@@ -63,23 +63,8 @@ h1 em { color: var(--accent); font-style: normal; }
 .secondary:hover, .nav-cta:hover { background: var(--soft); }
 
 .product-preview { overflow: hidden; border-radius: 20px; color: #ebf6ed; background: #192a22; border: 1px solid #354b3d; box-shadow: 0 22px 52px #142d2420; }
-.preview-top { display: flex; justify-content: space-between; gap: 8px; padding: 14px 16px; color: #c0d6c7; font-size: .61rem; }
-.preview-stage { position: relative; isolation: isolate; display: flex; align-items: start; padding: 32px 18px 26px; background-color: #21352b; background-image: radial-gradient(#5c7363 1px, transparent 1px); background-size: 16px 16px; }
-.preview-library { flex: 1; min-width: 0; align-self: start; color: #203127; background: #f5f7ef; border-radius: 12px; padding: 16px 12px 18px; box-shadow: 0 10px 24px #10191060; }
-.preview-brand { color: #456651; }
-.preview-library > p { font-size: 1.45rem; font-weight: 720; letter-spacing: -.05em; margin-block: 12px; }
-.preview-apps { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 7px; }
-.preview-apps div { display: grid; align-content: start; gap: 5px; min-width: 0; background: #fff; border: 1px solid #dce5d9; border-radius: 8px; padding: 7px; }
-.preview-apps i, .setting-icon { display: grid; place-items: center; width: 28px; height: 28px; background: #d7edcd; color: #234a32; border-radius: 7px; font-style: normal; }
-.preview-apps div:nth-child(2) i { background: #f5e8d2; color: #774924; }
-.preview-apps div:nth-child(3) i { background: #e4e0fa; color: #4c3c7c; }
-.preview-apps strong, .preview-apps small { font-size: .61rem; overflow-wrap: anywhere; }
-.preview-apps small, .preview-settings small { color: #516658; }
-.preview-settings { z-index: 1; display: grid; width: 41%; min-width: 0; margin: 85px 0 0 -13px; padding: 11px; border-radius: 10px; background: #fff; color: #203127; box-shadow: 0 8px 26px #10191070; }
-.preview-settings > strong { margin-top: 6px; font-size: .78rem; }
-.preview-settings small { margin-bottom: 9px; font-size: .64rem; }
-.setting-row { display: flex; justify-content: space-between; align-items: center; gap: 4px; padding-block: 6px; font-size: .64rem; border-top: 1px solid #e3e9e1; }
-.setting-row b { color: #285a3e; text-align: right; }
+.preview-stage { padding: clamp(10px, 2vw, 22px); background-color: #21352b; background-image: radial-gradient(#5c7363 1px, transparent 1px); background-size: 16px 16px; }
+.preview-screen { height: clamp(235px, 37vw, 355px); overflow: hidden; border: 5px solid #101a15; border-radius: 16px; background: #f9f5e8; }
 .product-preview figcaption { padding: 13px 16px; color: #c5dbcd; font-size: .76rem; }
 
 .section { padding-block: clamp(62px, 8vw, 106px); }
@@ -129,7 +114,6 @@ h1 em { color: var(--accent); font-style: normal; }
 @media (max-width: 880px) {
   .hero { grid-template-columns: 1fr; }
   .product-preview { width: min(100%, 540px); }
-  .wide-break { display: none; }
 }
 @media (max-width: 580px) {
   .shell { width: calc(100% - 36px); }
@@ -142,10 +126,6 @@ h1 em { color: var(--accent); font-style: normal; }
   .demo-grid { gap: 12px; }
   .site-footer { flex-wrap: wrap; gap: 12px; }
   .site-footer p { display: none; }
-  .preview-stage { padding-inline: 10px; }
-  .preview-settings { width: 43%; }
-  .preview-apps { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .preview-apps div:last-child { display: none; }
   .compare-controls { gap: 10px; }
   .segments span { padding-inline: .46rem; }
 }

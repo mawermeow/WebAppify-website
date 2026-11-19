@@ -44,7 +44,7 @@ docs/PRODUCT_SPEC.md      Verified iOS behavior and launch messaging
 
 English uses the original paths at the domain root. Traditional Chinese, Japanese, and Korean use `/zh-TW/`, `/ja/`, and `/ko/`. Every language has the same page structure, such as `/ja/demo/reader/`. The language menu links to the equivalent page, and each page sets its HTML language at build time. Update `lib/messages.ts` for interface copy and `lib/chapters.ts` for reader content.
 
-Set `NEXT_PUBLIC_SITE_URL` before deploying to include locale-specific canonical URLs, hreflang links, and sitemap alternates. The pending privacy and support pages stay out of the sitemap in all languages.
+Set `NEXT_PUBLIC_SITE_URL` before deploying to include locale-specific canonical URLs, hreflang links, and sitemap alternates.
 
 ## Verify in WebAppify
 
@@ -57,4 +57,4 @@ The homepage’s opening modes are illustrative. The standalone routes use respo
 
 ## Before launch
 
-Confirm the official origin and App Store listing, replace the privacy and support placeholders, and remove their noindex directives and add them to the sitemap once approved. Test both demos in the shipping WebAppify build and capture the App Store screenshots.
+Confirm the official origin and App Store listing. Test both demos in the shipping WebAppify build and capture the App Store screenshots.

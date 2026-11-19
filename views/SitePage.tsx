@@ -18,7 +18,7 @@ const titles = {
   demos: "Demos",
   whiteboard: "Creative Workspace",
   reader: "Reading Workspace",
-  privacy: "Privacy",
+  privacy: "Privacy policy",
   support: "Support",
 } satisfies Record<Route, Message>;
 
@@ -44,7 +44,6 @@ export function pageMetadata(locale: Locale, slug?: string[]): Metadata {
     title: pageTitle,
     description: t(descriptions[route]),
     ...(metadataBase ? { alternates: { canonical: path, languages: alternatePaths(route) } } : {}),
-    ...(route === "privacy" || route === "support" ? { robots: { index: false } } : {}),
     openGraph: {
       title: pageTitle, description: t(descriptions[route]), siteName: title, type: "website",
       locale: openGraphLocales[locale],

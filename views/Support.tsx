@@ -1,12 +1,13 @@
 import type { Locale } from "@/lib/locales";
 import { translator } from "@/lib/messages";
+import { supportEmail, supportIntro } from "@/lib/support";
 import { Footer, Header } from "@/components/SiteChrome";
 
 export default function SupportPage({ locale }: { locale: Locale }) {
   const t = translator(locale);
   return <><Header locale={locale} path="/support/" /><main id="main" className="shell subpage">
-    <span className="eyebrow">{t("DRAFT / PENDING REVIEW")}</span><h1>{t("Support")}</h1>
-    <p>{t("Official support contact details and availability are pending confirmation.")}</p>
+    <h1>{t("Support")}</h1>
+    <p>{supportIntro[locale]} <a className="underline" href={`mailto:${supportEmail}`}>{supportEmail}</a></p>
     <section id="shortcuts" className="mt-10 mb-8 max-w-prose">
       <h2 className="text-2xl font-bold">{t("Open a saved web app from Home Screen or a note")}</h2>
       <h3 className="mt-5 font-semibold">{t("Home Screen")}</h3>
